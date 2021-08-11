@@ -1,0 +1,45 @@
+@import "variables";
+
+.card {
+  max-width: 250px;
+}
+
+.imageWrapper {
+  min-height: 200px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.contentWrapper {
+  background-color: #fff;
+  padding: 10px;
+
+}
+
+.tag {
+  color: darkred;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.name {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.time {
+  color: $accent_color2
+}
+
+.rating {
+  color: $accent_color2
+}
