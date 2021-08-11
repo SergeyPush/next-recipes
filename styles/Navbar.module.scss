@@ -1,29 +1,36 @@
-.nav{
+@import "variables";
+
+.nav {
   width: 100%;
   display: flex;
-  background-color: #fd8458;
-  padding: 10px 40px;
+  background-color: $accent_color;
+  padding: 8px 40px;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 2px solid orange;
+  position: fixed;
+  top: 0;
 }
-.logo{
+
+.logo {
   color: white;
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 500;
 
 }
-.link{
+
+.link {
   margin: 0 10px;
   color: white;
   font-size: 1.2rem;
 
-  &:hover{
-    color: hotpink;
+  &:hover {
+    color: $accent_color2;
   }
 }
 
-.icon{
+.icon {
   color: white;
-  margin: 0 5px;
+  margin: 0 10px;
   font-size: 1.2rem;
 }

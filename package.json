@@ -11,6 +11,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
+    "contentful": "^8.4.2",
     "next": "11.0.1",
     "next-seo": "^4.26.0",
     "react": "17.0.2",

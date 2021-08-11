@@ -3,12 +3,18 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faSeedling } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   return (
     <div>
       <nav className={styles.nav}>
-        <div className={styles.logo}>Recipes</div>
+        <div className={styles.logo}>
+          <span>
+            <FontAwesomeIcon icon={faSeedling} />
+          </span>{" "}
+          Recipes
+        </div>
         <div className={styles.links}>
           <Link href={"/"}>
             <a className={styles.link}>Home</a>
