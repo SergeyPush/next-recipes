@@ -1,0 +1,29 @@
+.nav{
+  width: 100%;
+  display: flex;
+  background-color: #fd8458;
+  padding: 10px 40px;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo{
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 500;
+
+}
+.link{
+  margin: 0 10px;
+  color: white;
+  font-size: 1.2rem;
+
+  &:hover{
+    color: hotpink;
+  }
+}
+
+.icon{
+  color: white;
+  margin: 0 5px;
+  font-size: 1.2rem;
+}
