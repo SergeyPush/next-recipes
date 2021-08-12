@@ -1,13 +1,17 @@
-import React from "react";
+import React, { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as empty } from "@fortawesome/free-regular-svg-icons";
 import { faStar as filled } from "@fortawesome/free-solid-svg-icons";
 
-interface RatingProps {
+interface RatingProps
+  extends DetailedHTMLProps<
+    ButtonHTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  > {
   rating: number;
 }
 
-const Rating: React.FC<RatingProps> = ({ rating }) => {
+const Rating: React.FC<RatingProps> = ({ rating, ...props }) => {
   const buildRating = Array.from({ length: 5 })
     .fill("<></>")
     .map((item, index) =>
@@ -18,7 +22,7 @@ const Rating: React.FC<RatingProps> = ({ rating }) => {
       )
     );
 
-  return <div>{buildRating}</div>;
+  return <div {...props}>{buildRating}</div>;
 };
 
 export default Rating;

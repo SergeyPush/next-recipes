@@ -3,8 +3,9 @@ import { client } from "../../utils/contentful_api";
 import { IRecipe } from "../../interfaces/IRecipe";
 import MainLayout from "../../layout/MainLayout";
 import Rating from "../../components/Rating";
-import Image from "next/image";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import ImageComponent from "../../components/ImageComponent";
+import styles from "../../styles/RecipePage.module.scss";
 
 interface RecipePageTypes {
   recipe: IRecipe;
@@ -25,19 +26,21 @@ const RecipePage: React.FC<RecipePageTypes> = ({ recipe }) => {
 
   return (
     <MainLayout title={name}>
-      <p>Tags</p>
-      <h2>{name}</h2>
-      <h3>{subtitle}</h3>
+      <div className={styles.recipeWrapper}>
+        <p>Tags</p>
+        <h2>{name}</h2>
+        <h3>{subtitle}</h3>
 
-      <span>
-        <Rating rating={rating} />
-      </span>
-      <Image
-        src={`https://${image.fields.file.url}`}
-        width={640}
-        height={480}
-      />
-      <div>{documentToReactComponents(description)}</div>
+        <span>
+          <Rating rating={rating} clasName={styles.rating} />
+        </span>
+        <ImageComponent
+          src={`https://${image.fields.file.url}`}
+          height={"700px"}
+          width={"600px"}
+        />
+        <div>{documentToReactComponents(description)}</div>
+      </div>
     </MainLayout>
   );
 };
