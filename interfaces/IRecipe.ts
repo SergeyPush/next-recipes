@@ -1,7 +1,10 @@
+import { Document } from "@contentful/rich-text-types";
+import { IImage } from "./IImage";
+
 export interface IRecipe {
-  description: object;
-  image: object;
-  ingredients: object;
+  description: Document;
+  image: IImage;
+  ingredients: Document;
   name: string;
   price: number;
   rating: number;

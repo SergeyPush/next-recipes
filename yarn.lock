@@ -39,6 +39,18 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@contentful/rich-text-react-renderer@^15.1.0":
+  version "15.1.0"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-react-renderer/-/rich-text-react-renderer-15.1.0.tgz#992f7d3ca4590722d0bdf42021ada6957d76e728"
+  integrity sha512-/oo1zJDaYbc9kF7GjtfSrFMc38QucvVtci887RaMZdTJBLC4wyfoFGpeXo8c1xHkbVUeey13eEfEh2356dx20g==
+  dependencies:
+    "@contentful/rich-text-types" "^15.1.0"
+
+"@contentful/rich-text-types@^15.1.0":
+  version "15.1.0"
+  resolved "https://registry.yarnpkg.com/@contentful/rich-text-types/-/rich-text-types-15.1.0.tgz#5637452257e6c7c6fc406ec1ec6ab7fcc1158105"
+  integrity sha512-3PgQi/B5yKC3xXDar1Ry4i4l9jgt56PFZ40cOkE+oCNLmNlFtZolo6cTrf4VunuufSsCfjTs4iWovy7fbM1I8Q==
+
 "@fortawesome/fontawesome-common-types@^0.2.36":
   version "0.2.36"
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.36.tgz#b44e52db3b6b20523e0c57ef8c42d315532cb903"
