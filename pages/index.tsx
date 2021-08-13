@@ -3,7 +3,7 @@ import { client } from "../utils/contentful_api";
 import { IRecipe } from "../interfaces/IRecipe";
 import React from "react";
 import Card from "../components/Card";
-
+import styles from "../styles/Home.module.scss";
 interface HomeProps {
   data: [IRecipe];
 }
@@ -14,9 +14,11 @@ const Home: React.FC<HomeProps> = ({ data }) => {
     <>
       <MainLayout title={"Recipes | Home"}>
         <h1>This is home page</h1>
-        {data.map((recipe) => (
-          <Card recipe={recipe} key={recipe.slug} />
-        ))}
+        <div className={styles.grid}>
+          {data.map((recipe) => (
+            <Card recipe={recipe} key={recipe.slug} />
+          ))}
+        </div>
       </MainLayout>
     </>
   );

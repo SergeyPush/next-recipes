@@ -1,0 +1,10 @@
+@import "variables";
+.tag{
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 5px 8px;
+  color: $accent_color2;
+  background-color: $accent_color3;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}

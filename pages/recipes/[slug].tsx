@@ -6,6 +6,8 @@ import Rating from "../../components/Rating";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import ImageComponent from "../../components/ImageComponent";
 import styles from "../../styles/RecipePage.module.scss";
+import RichText from "../../components/RichText";
+import TagComponent from "../../components/TagComponent";
 
 interface RecipePageTypes {
   recipe: IRecipe;
@@ -27,19 +29,16 @@ const RecipePage: React.FC<RecipePageTypes> = ({ recipe }) => {
   return (
     <MainLayout title={name}>
       <div className={styles.recipeWrapper}>
-        <p>Tags</p>
-        <h2>{name}</h2>
-        <h3>{subtitle}</h3>
-
-        <span>
-          <Rating rating={rating} clasName={styles.rating} />
-        </span>
+        <TagComponent tags={tags} />
+        <h2 className={styles.title}>{name}</h2>
+        <h3 className={styles.subtitle}>{subtitle}</h3>
+        <Rating rating={rating} className={styles.rating} />
         <ImageComponent
           src={`https://${image.fields.file.url}`}
           height={"700px"}
           width={"600px"}
         />
-        <div>{documentToReactComponents(description)}</div>
+        <RichText text={description} />
       </div>
     </MainLayout>
   );
