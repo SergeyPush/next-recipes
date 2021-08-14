@@ -1,8 +1,42 @@
 .imageWrapper {
   width: 100%;
-  height: 90vh;
   position: relative;
 }
 
 .image {
+  object-position: center;
+}
+
+.card {
+  position: absolute;
+  z-index: 2;
+  bottom: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  padding: 25px;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.link {
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

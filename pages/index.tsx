@@ -5,6 +5,7 @@ import React from "react";
 import Card from "../components/Card";
 import styles from "../styles/Home.module.scss";
 import Showcase from "../components/Showcase";
+import Header from "../components/Header";
 
 interface HomeProps {
   data: [IRecipe];
@@ -14,13 +15,10 @@ const Home: React.FC<HomeProps> = ({ data }) => {
   return (
     <>
       <MainLayout title={"Recipes | Home"}>
-        <h1>This is home page</h1>
         <div className={styles.wrapper}>
-          <div className={styles.first}>
-            <Showcase recipe={data.pop()} />
-          </div>
+          <Showcase recipe={data[0]} className={styles.first} />
           <div className={styles.grid}>
-            {data.map((recipe) => (
+            {data.slice(0, 4).map((recipe) => (
               <Card recipe={recipe} key={recipe.slug} />
             ))}
           </div>
