@@ -4,26 +4,56 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faSeedling } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/router";
+import cn from "classnames";
 
 const Navbar = () => {
+  const router = useRouter();
+
   return (
     <div>
       <nav className={styles.nav}>
         <div className={styles.logo}>
-          <span>
-            <FontAwesomeIcon icon={faSeedling} />
-          </span>{" "}
-          Recipes
+          <Link href={"/"}>
+            <a>
+              <span>
+                <FontAwesomeIcon
+                  icon={faSeedling}
+                  className={styles.logoColor}
+                />
+              </span>{" "}
+              Recipes
+            </a>
+          </Link>
         </div>
+
         <div className={styles.links}>
           <Link href={"/"}>
-            <a className={styles.link}>Home</a>
+            <a
+              className={cn(styles.link, {
+                [styles.active]: router.pathname === "/",
+              })}
+            >
+              Home
+            </a>
           </Link>
           <Link href={"/recipes"}>
-            <a className={styles.link}>Recipes</a>
+            <a
+              className={cn(styles.link, {
+                [styles.active]: router.pathname === "/recipes",
+              })}
+            >
+              Recipes
+            </a>
           </Link>
           <Link href={"/about"}>
-            <a className={styles.link}>About Us</a>
+            <a
+              className={cn(styles.link, {
+                [styles.active]: router.pathname === "/about",
+              })}
+            >
+              About Us
+            </a>
           </Link>
         </div>
         <div>

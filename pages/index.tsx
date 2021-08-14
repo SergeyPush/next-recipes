@@ -4,20 +4,26 @@ import { IRecipe } from "../interfaces/IRecipe";
 import React from "react";
 import Card from "../components/Card";
 import styles from "../styles/Home.module.scss";
+import Showcase from "../components/Showcase";
+
 interface HomeProps {
   data: [IRecipe];
 }
 
 const Home: React.FC<HomeProps> = ({ data }) => {
-  console.log(data);
   return (
     <>
       <MainLayout title={"Recipes | Home"}>
         <h1>This is home page</h1>
-        <div className={styles.grid}>
-          {data.map((recipe) => (
-            <Card recipe={recipe} key={recipe.slug} />
-          ))}
+        <div className={styles.wrapper}>
+          <div className={styles.first}>
+            <Showcase recipe={data.pop()} />
+          </div>
+          <div className={styles.grid}>
+            {data.map((recipe) => (
+              <Card recipe={recipe} key={recipe.slug} />
+            ))}
+          </div>
         </div>
       </MainLayout>
     </>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { client } from "../../utils/contentful_api";
 import { IRecipe } from "../../interfaces/IRecipe";
 import MainLayout from "../../layout/MainLayout";
@@ -33,12 +33,11 @@ const RecipePage: React.FC<RecipePageTypes> = ({ recipe }) => {
         <h2 className={styles.title}>{name}</h2>
         <h3 className={styles.subtitle}>{subtitle}</h3>
         <Rating rating={rating} className={styles.rating} />
-        <ImageComponent
-          src={`https://${image.fields.file.url}`}
-          height={"700px"}
-          width={"600px"}
-        />
+        <ImageComponent src={`https://${image.fields.file.url}`} />
+        Cooking time: {time}min
         <RichText text={description} />
+        <h3>Ingredients:</h3>
+        <RichText text={ingredients} />
       </div>
     </MainLayout>
   );

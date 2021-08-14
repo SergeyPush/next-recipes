@@ -4,25 +4,22 @@ import React from "react";
 
 interface ImageComponentProps {
   src: string;
-  width?: string;
-  height?: string;
+  width?: number;
+  height?: number;
   objectfit?: string;
 }
 
 const ImageComponent: React.FC<ImageComponentProps> = ({
   src,
-  width = "auto",
-  height = "auto",
+  width = 400,
   objectfit = "contain",
 }) => {
   return (
-    <div className={styles.imageWrapper} style={{ width, height }}>
+    <div className={styles.imageContainer}>
       <Image
         src={src}
-        layout="responsive"
-        width={width}
-        height={height}
-        // objectFit={"cover"}
+        layout="fill"
+        objectFit="cover"
         className={styles.image}
       />
     </div>
