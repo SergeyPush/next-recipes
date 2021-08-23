@@ -1,13 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { client } from "../../utils/contentful_api";
 import { IRecipe } from "../../interfaces/IRecipe";
 import MainLayout from "../../layout/MainLayout";
 import Rating from "../../components/Rating";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import ImageComponent from "../../components/ImageComponent";
 import styles from "../../styles/RecipePage.module.scss";
 import RichText from "../../components/RichText";
 import TagComponent from "../../components/TagComponent";
+import Favorites from "../../components/Favorites";
+import { useFavorites } from "../../hooks/useFavorites";
 
 interface RecipePageTypes {
   recipe: IRecipe;
@@ -26,13 +27,21 @@ const RecipePage: React.FC<RecipePageTypes> = ({ recipe }) => {
     time,
   } = recipe;
 
+  const { isFavorite, addToFavorites } = useFavorites(recipe);
+
   return (
     <MainLayout title={name}>
       <div className={styles.recipeWrapper}>
         <TagComponent tags={tags} />
         <h2 className={styles.title}>{name}</h2>
         <h3 className={styles.subtitle}>{subtitle}</h3>
-        <Rating rating={rating} className={styles.rating} />
+        <div className={styles.controls}>
+          <Rating rating={rating} className={styles.rating} />
+          <Favorites
+            isFavorite={isFavorite}
+            addToFavorites={() => addToFavorites()}
+          />
+        </div>
         <ImageComponent src={`https://${image.fields.file.url}`} />
         Cooking time: {time}min
         <RichText text={description} />

@@ -6,9 +6,12 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faSeedling } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
 import cn from "classnames";
+import { useState } from "react";
+import Search from "../components/Search";
 
 const Navbar = () => {
   const router = useRouter();
+  const [searchActive, setSearchActive] = useState<boolean>(false);
 
   return (
     <div>
@@ -56,9 +59,19 @@ const Navbar = () => {
             </a>
           </Link>
         </div>
-        <div>
-          <FontAwesomeIcon icon={faSearch} className={styles.icon} />
-          <FontAwesomeIcon icon={faUser} className={styles.icon} />
+        <div className={styles.controls}>
+          {searchActive ? (
+            <Search setSearchActive={setSearchActive} />
+          ) : (
+            <>
+              <FontAwesomeIcon
+                icon={faSearch}
+                className={cn(styles.icon, styles.search)}
+                onClick={() => setSearchActive(true)}
+              />
+              <FontAwesomeIcon icon={faUser} className={styles.icon} />
+            </>
+          )}
         </div>
       </nav>
     </div>
