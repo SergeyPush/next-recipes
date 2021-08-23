@@ -46,13 +46,13 @@ const Navbar = () => {
               Recipes
             </a>
           </Link>
-          <Link href={"/about"}>
+          <Link href={"/favorites"}>
             <a
               className={cn(styles.link, {
-                [styles.active]: router.pathname === "/about",
+                [styles.active]: router.pathname === "/favorites",
               })}
             >
-              About Us
+              Favorites
             </a>
           </Link>
         </div>
