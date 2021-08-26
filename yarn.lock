@@ -686,6 +686,13 @@
     "miller-rabin" "^4.0.0"
     "randombytes" "^2.0.0"
 
+"dom7@^4.0.0":
+  "integrity" "sha512-xOJ0LAHFwktyj8Xljz4R2wzRI+Y9mR0plkMP0WlqtwqAkqn/vbdAyRifiW/w8mXe17LGktntcAwsQ5fKVDBNYg=="
+  "resolved" "https://registry.npmjs.org/dom7/-/dom7-4.0.0.tgz"
+  "version" "4.0.0"
+  dependencies:
+    "ssr-window" "^4.0.0"
+
 "domain-browser@^1.1.1":
   "integrity" "sha512-jnjyiM6eRyZl2H+W8Q/zLMA481hzi0eszAaBUzIVnmYVDBbnLxVNnfu1HgEBvCbL+71FrxMl3E6lpKH7Ge3OXA=="
   "resolved" "https://registry.npmjs.org/domain-browser/-/domain-browser-1.2.0.tgz"
@@ -1767,6 +1774,11 @@
   dependencies:
     "whatwg-url" "^7.0.0"
 
+"ssr-window@^4.0.0":
+  "integrity" "sha512-qCg6wJNeGNTVcPK2KFNfwtHU1gA3UZDZdxogu+Ys5+Ue5PMOENxUb7sscpAWWo4mWOBkJRCwQ50IlyA7qZ0hxw=="
+  "resolved" "https://registry.npmjs.org/ssr-window/-/ssr-window-4.0.0.tgz"
+  "version" "4.0.0"
+
 "stacktrace-parser@0.1.10":
   "integrity" "sha512-KJP1OCML99+8fhOHxwwzyWrlUuVX5GQ0ZpJTd1DFXhdkrvg1szxfHhawXUZ3g9TkXORQd4/WG68jMlQZ2p8wlg=="
   "resolved" "https://registry.npmjs.org/stacktrace-parser/-/stacktrace-parser-0.1.10.tgz"
@@ -1909,6 +1921,14 @@
   "version" "8.1.1"
   dependencies:
     "has-flag" "^4.0.0"
+
+"swiper@^7.0.1":
+  "integrity" "sha512-mvn5Pap63wi3gY+z4+OnDvFGtep8Z57rnyEKysq+KVcdc6wZP0b7g8YO04HqKb5+mgqzvKEoup9R759DkVAjTw=="
+  "resolved" "https://registry.npmjs.org/swiper/-/swiper-7.0.1.tgz"
+  "version" "7.0.1"
+  dependencies:
+    "dom7" "^4.0.0"
+    "ssr-window" "^4.0.0"
 
 "timers-browserify@^2.0.4", "timers-browserify@2.0.12":
   "integrity" "sha512-9phl76Cqm6FhSX9Xe1ZUAMLtm1BLkKj2Qd5ApyWkXzsMRaA7dgr81kf4wJmQf/hAvg8EEyJxDo3du/0KlhPiKQ=="

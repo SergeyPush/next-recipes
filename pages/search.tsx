@@ -11,7 +11,10 @@ const SearchPage = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const res = await client.getEntries({ "fields.name": query.term });
+      const res = await client.getEntries({
+        "fields.name": "Green",
+        content_type: "recipie",
+      });
       console.log(res);
     };
     getData();

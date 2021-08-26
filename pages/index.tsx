@@ -6,6 +6,7 @@ import Card from "../components/Card";
 import styles from "../styles/Home.module.scss";
 import Showcase from "../components/Showcase";
 import Header from "../components/Header";
+import Slider from "../components/Slider";
 
 interface HomeProps {
   data: [IRecipe];
@@ -23,6 +24,7 @@ const Home: React.FC<HomeProps> = ({ data }) => {
             ))}
           </div>
         </div>
+        <Slider recipes={data} />
       </MainLayout>
     </>
   );
