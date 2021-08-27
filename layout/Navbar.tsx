@@ -9,6 +9,7 @@ import cn from "classnames";
 import { useState } from "react";
 import Search from "../components/Search";
 import HamburgerMenu from "react-hamburger-menu";
+import MobileMenu from "../components/MobileMenu";
 
 const Navbar = () => {
   const router = useRouter();
@@ -31,7 +32,7 @@ const Navbar = () => {
             </a>
           </Link>
         </div>
-
+        {menuIsOpen && <MobileMenu />}
         <div className={styles.links}>
           <Link href={"/"}>
             <a
@@ -70,6 +71,7 @@ const Navbar = () => {
                 icon={faSearch}
                 className={cn(styles.icon, styles.search)}
                 onClick={() => setSearchActive(true)}
+                size={"2x"}
               />
               <FontAwesomeIcon icon={faUser} className={styles.icon} />
               <HamburgerMenu
@@ -77,11 +79,12 @@ const Navbar = () => {
                   setMenuIsOpen((prevState) => !prevState);
                 }}
                 isOpen={menuIsOpen}
-                width={26}
-                height={18}
+                width={36}
+                height={24}
                 strokeWidth={3}
                 color="white"
                 className={styles.burger}
+                animationDuration={0.2}
               />
             </>
           )}

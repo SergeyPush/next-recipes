@@ -17,11 +17,11 @@ const Slider: React.FC<SliderProps> = ({ recipes }) => {
   SwiperCore.use([Navigation]);
 
   const breakpoints = {
-    320:{
-      slidesPerView: 1,
+    320: {
+      slidesPerView: 2,
       spaceBetween: 20,
     },
-    640:{
+    640: {
       slidesPerView: 3,
       spaceBetween: 20,
     },

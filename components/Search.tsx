@@ -1,13 +1,9 @@
-import React, { SetStateAction, useState } from "react";
+import React, { useState } from "react";
 import styles from "../styles/Search.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
-
-interface SearchProps {
-  setSearchActive: SetStateAction<boolean>;
-}
 
 const Search = ({ setSearchActive }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -27,6 +23,7 @@ const Search = ({ setSearchActive }) => {
           type="text"
           className={styles.input}
           value={searchTerm}
+          placeholder={"Search the site..."}
           onChange={(e) => {
             setSearchTerm(e.target.value);
           }}
