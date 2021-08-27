@@ -8,7 +8,9 @@ export const useFavorites = (recipe: IRecipe | null) => {
 
   useEffect(() => {
     const favoritesList = localStorage.getItem(FAVORITES);
-    setFavorites(JSON.parse(favoritesList));
+    if(favoritesList){
+      setFavorites(JSON.parse(favoritesList));
+    }
   }, [setFavorites]);
 
   useEffect(() => {
@@ -18,7 +20,9 @@ export const useFavorites = (recipe: IRecipe | null) => {
   }, [favorites]);
 
   const isInFavorites = () => {
-    return !!favorites.find((fav) => fav.slug === recipe.slug);
+    if (favorites) {
+      return !!favorites.find((fav) => fav.slug === recipe.slug);
+    }
   };
 
   const addToFavorites = () => {

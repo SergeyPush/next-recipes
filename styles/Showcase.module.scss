@@ -1,6 +1,7 @@
 .imageWrapper {
   width: 100%;
   position: relative;
+  min-height: 600px;
 }
 
 .image {
@@ -18,6 +19,7 @@
   left: 0;
   right: 0;
   padding: 25px;
+
 }
 
 .title {
