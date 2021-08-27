@@ -17,7 +17,7 @@ const Card: React.FC<CardProps> = ({ recipe }) => {
       <div className={styles.card}>
         <div className={styles.imageWrapper}>
           <Image
-            src={"https://" + recipe.image.fields.file.url}
+            src={"https:" + recipe.image.fields.file.url}
             className={styles.image}
             layout={"fill"}
             objectFit={"cover"}
