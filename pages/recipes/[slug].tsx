@@ -59,12 +59,11 @@ export const getStaticProps = async ({ params }) => {
     content_type: "recipie",
     "fields.slug": params.slug,
   });
-  console.log(res.items[0].fields);
 
   return { props: { recipe: res.items[0].fields } };
 };
 export const getStaticPaths = async () => {
-  const res = await client.getEntries({
+  const res: any = await client.getEntries({
     content_type: "recipie",
   });
 
@@ -76,6 +75,6 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 };
