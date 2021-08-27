@@ -1,8 +1,35 @@
-.wrapper {
+@import "variables";
+
+.backdrop {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0,0,0,0.1);
+}
+
+.wrapper {
   background-color: #ffaa78;
   transition: all 1s ease-in;
+  padding: 100px 50px 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.link {
+  margin-bottom: 20px;
+  color: white;
+  font-size: 1.6rem;
+
+  &:hover {
+    color: $accent_color2;
+  }
+}
+
+.active {
+  color: $accent_color2;
 }

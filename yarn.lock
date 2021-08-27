@@ -192,7 +192,7 @@
 
 "@types/swiper@^5.4.3":
   version "5.4.3"
-  resolved "https://registry.npmjs.org/@types/swiper/-/swiper-5.4.3.tgz"
+  resolved "https://registry.yarnpkg.com/@types/swiper/-/swiper-5.4.3.tgz#a1420bd9737626e630bb116d711efde34f5b9e99"
   integrity sha512-hJXpVeANf+XQXgbvmuFZdsnaSOKqOEZcaLDnHhZOJDRow+lfboatwubW+Ay9XiHobMGyEomkgpXSYRlDVn4gMQ==
 
 anser@1.4.9:
@@ -1679,7 +1679,7 @@ react-dom@17.0.2:
 
 react-hamburger-menu@^1.2.1:
   version "1.2.1"
-  resolved "https://registry.npmjs.org/react-hamburger-menu/-/react-hamburger-menu-1.2.1.tgz"
+  resolved "https://registry.yarnpkg.com/react-hamburger-menu/-/react-hamburger-menu-1.2.1.tgz#bcaca08bf7d1ae96aa97553828765dce8f912eeb"
   integrity sha512-It5Jque8bx9lYn8q/NFtu9Ci20fBMsyunFSp06ZGgWXbMZlTFrN0IxKguGZ0igYQr6RvJ3S9CN3rTjrObmq/Cw==
 
 react-hamburgers@^1.0.0:

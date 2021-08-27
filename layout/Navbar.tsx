@@ -9,7 +9,7 @@ import cn from "classnames";
 import { useState } from "react";
 import Search from "../components/Search";
 import HamburgerMenu from "react-hamburger-menu";
-import MobileMenu from "../components/MobileMenu";
+import MobileMenu from "./MobileMenu";
 
 const Navbar = () => {
   const router = useRouter();
@@ -32,7 +32,7 @@ const Navbar = () => {
             </a>
           </Link>
         </div>
-        {menuIsOpen && <MobileMenu />}
+        {menuIsOpen && <MobileMenu menuIsOpen={setMenuIsOpen} />}
         <div className={styles.links}>
           <Link href={"/"}>
             <a
