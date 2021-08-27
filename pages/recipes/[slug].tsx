@@ -9,6 +9,7 @@ import RichText from "../../components/RichText";
 import TagComponent from "../../components/TagComponent";
 import Favorites from "../../components/Favorites";
 import { useFavorites } from "../../hooks/useFavorites";
+import Image from "next/image";
 
 interface RecipePageTypes {
   recipe: IRecipe;
@@ -45,6 +46,7 @@ const RecipePage: React.FC<RecipePageTypes> = ({ recipe }) => {
             addToFavorites={() => addToFavorites()}
           />
         </div>
+        <Image src={`http:${image.fields.file.url}`} width={640} height={480} />
         <ImageComponent src={image.fields.file.url} />
         Cooking time: {time}min
         <RichText text={description} />
