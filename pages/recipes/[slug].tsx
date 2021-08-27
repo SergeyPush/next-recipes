@@ -45,7 +45,7 @@ const RecipePage: React.FC<RecipePageTypes> = ({ recipe }) => {
             addToFavorites={() => addToFavorites()}
           />
         </div>
-        <ImageComponent src={`https://${image.fields.file.url}`} />
+        <ImageComponent src={image.fields.file.url} />
         Cooking time: {time}min
         <RichText text={description} />
         <h3>Ingredients:</h3>
@@ -78,6 +78,6 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
