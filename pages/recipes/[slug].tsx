@@ -15,6 +15,9 @@ interface RecipePageTypes {
 }
 
 const RecipePage: React.FC<RecipePageTypes> = ({ recipe }) => {
+  if (!recipe) {
+    return <MainLayout title={"Not found"}>Page not found</MainLayout>;
+  }
   const {
     name,
     description,
@@ -75,6 +78,6 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
