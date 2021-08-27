@@ -17,7 +17,7 @@ const Showcase: React.FC<ShowcaseProps> = ({ recipe }) => {
     <div className={styles.imageWrapper}>
       <Image
         className={styles.image}
-        src={`https://${recipe.image.fields.file.url}`}
+        src={`https:${recipe.image.fields.file.url}`}
         objectFit="cover"
         layout="fill"
       />
