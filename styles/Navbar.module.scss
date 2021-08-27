@@ -23,6 +23,10 @@
   color: $accent_color2;
 }
 
+.links {
+
+}
+
 .link {
   margin: 0 10px;
   color: white;
@@ -50,4 +54,21 @@
 
 .search {
   margin-left: auto;
+  cursor: pointer;
 }
+
+.burger {
+  margin-left: 10px;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .links {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+}
+

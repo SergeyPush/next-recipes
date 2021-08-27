@@ -5,6 +5,9 @@
   margin-left: auto;
   margin-right: auto;
   padding-top: 40px;
+  @media (max-width: 1024px) {
+    max-width: 80%;
+  }
 
 }
 
@@ -24,7 +27,6 @@
 
 .rating {
   color: $accent_color2;
-  margin-bottom: 20px;
 }
 
 .controls {
@@ -32,4 +34,5 @@
   justify-content: space-between;
   align-items: center;
   font-size: 1.4rem;
+  margin-bottom: 24px;
 }

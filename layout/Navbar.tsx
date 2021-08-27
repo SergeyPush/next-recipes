@@ -8,10 +8,12 @@ import { useRouter } from "next/router";
 import cn from "classnames";
 import { useState } from "react";
 import Search from "../components/Search";
+import HamburgerMenu from "react-hamburger-menu";
 
 const Navbar = () => {
   const router = useRouter();
   const [searchActive, setSearchActive] = useState<boolean>(false);
+  const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
 
   return (
     <div>
@@ -70,6 +72,17 @@ const Navbar = () => {
                 onClick={() => setSearchActive(true)}
               />
               <FontAwesomeIcon icon={faUser} className={styles.icon} />
+              <HamburgerMenu
+                menuClicked={() => {
+                  setMenuIsOpen((prevState) => !prevState);
+                }}
+                isOpen={menuIsOpen}
+                width={26}
+                height={18}
+                strokeWidth={3}
+                color="white"
+                className={styles.burger}
+              />
             </>
           )}
         </div>

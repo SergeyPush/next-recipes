@@ -7,12 +7,14 @@ interface ImageComponentProps {
   width?: number;
   height?: number;
   objectfit?: string;
+  alt: string;
 }
 
 const ImageComponent: React.FC<ImageComponentProps> = ({
   src,
   width = 400,
   objectfit = "contain",
+  alt,
 }) => {
   return (
     <div className={styles.imageContainer}>
@@ -21,6 +23,7 @@ const ImageComponent: React.FC<ImageComponentProps> = ({
         layout="fill"
         objectFit="cover"
         className={styles.image}
+        alt={alt}
       />
     </div>
   );
