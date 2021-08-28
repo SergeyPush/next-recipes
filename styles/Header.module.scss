@@ -1,14 +1,37 @@
-.header {
-  font-size: 2.5rem;
+.h1 {
+  font-size: 2.8rem;
   font-weight: 400;
-  text-align: center;
-  margin-bottom: 40px;
+  text-align: left;
+  margin-bottom: 50px;
   margin-top: 40px;
-  padding: 0 20px;
+
 }
 
+.h2 {
+  font-size: 2.6rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  line-height: 1.2;
+}
+
+.underline {
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: #117777;
+}
+
+.h1:hover .underline {
+  text-decoration-color: #ffaa78;
+}
+
+.center {
+  text-align: center;
+}
+
+
 @media (max-width: 1024px) {
-  .header {
+  .h2, .h1 {
     font-size: 2rem;
   }
 }

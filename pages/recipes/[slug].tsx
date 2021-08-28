@@ -9,6 +9,7 @@ import RichText from "../../components/RichText";
 import TagComponent from "../../components/TagComponent";
 import Favorites from "../../components/Favorites";
 import { useFavorites } from "../../hooks/useFavorites";
+import Header from "../../components/Header";
 
 interface RecipePageTypes {
   recipe: IRecipe;
@@ -36,7 +37,7 @@ const RecipePage: React.FC<RecipePageTypes> = ({ recipe }) => {
     <MainLayout title={name}>
       <div className={styles.recipeWrapper}>
         <TagComponent tags={tags} />
-        <h2 className={styles.title}>{name}</h2>
+        <Header title={name} size="h2" underline={true} align="left" />
         <h3 className={styles.subtitle}>{subtitle}</h3>
         <div className={styles.controls}>
           <Rating rating={rating} className={styles.rating} />

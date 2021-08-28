@@ -10,10 +10,10 @@ interface RecipesProps {
   recipes: [IRecipe];
 }
 
-const RecipesPage = ({ recipes }) => {
+const RecipesPage: React.FC<RecipesProps> = ({ recipes }) => {
   return (
     <MainLayout title={"Recipes"}>
-      <Header title={"Our Recipes"} />
+      <Header title={"Our Recipes"} align="center" underline={true} size="h1" />
       <div className={styles.wrapper}>
         {recipes.map((recipe) => (
           <Card recipe={recipe} key={recipe.slug} />

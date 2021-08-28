@@ -8,6 +8,7 @@ import Card from "./Card";
 import "swiper/css";
 import "swiper/css/bundle";
 import "swiper/css/navigation";
+import Header from "./Header";
 
 interface SliderProps {
   recipes: IRecipe[];
@@ -37,6 +38,12 @@ const Slider: React.FC<SliderProps> = ({ recipes }) => {
 
   return (
     <div className={styles.wrapper}>
+      <Header
+        title={"Our best recipes"}
+        align="center"
+        underline={true}
+        size="h2"
+      />
       <Swiper
         id="swiper-color"
         navigation={true}

@@ -11,9 +11,14 @@ const Favorites = () => {
   return (
     <MainLayout title={"Favorites"}>
       {!favorites.length ? (
-        <Header title={"You don't have favorites right now"} />
+        <Header title={"You don't have favorites right now"} align="center" />
       ) : (
-        <Header title={"Your favorite recipes"} />
+        <Header
+          title={"Your favorite recipes"}
+          align="center"
+          underline={true}
+          size="h1"
+        />
       )}
       <div className={styles.wrapper}>
         {favorites.length > 0 &&
