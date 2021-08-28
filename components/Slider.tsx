@@ -41,7 +41,6 @@ const Slider: React.FC<SliderProps> = ({ recipes }) => {
       <Header
         title={"Our best recipes"}
         align="center"
-        underline={true}
         size="h2"
       />
       <Swiper

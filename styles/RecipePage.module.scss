@@ -27,12 +27,13 @@
 
 .rating {
   color: $accent_color2;
+  font-size: 1.2rem;
 }
 
 .controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.4rem;
+  //font-size: 1.4rem;
   margin-bottom: 24px;
 }

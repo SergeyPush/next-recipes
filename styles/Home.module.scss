@@ -1,6 +1,6 @@
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr;
   grid-template-areas:
           "showcase list";
   height: calc(100vh - 68px);
@@ -8,6 +8,7 @@
 
 .first {
   grid-area: showcase;
+
 }
 
 .grid {
@@ -17,7 +18,7 @@
   //grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-columns: 1fr 1fr;
   grid-area: list;
-
+  background-color: #EFF8F8;
 
 }
 

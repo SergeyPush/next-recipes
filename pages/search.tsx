@@ -27,7 +27,7 @@ const SearchPage = () => {
 
   return (
     <MainLayout title={`Search results: ${query.term}`}>
-      <Header title={`Search results: ${query.term}`} />
+      <Header title={`Search results: ${query.term}`} align="center" size="h1" underline={true} />
       <div className={styles.wrapper}>
         {searchResults.map((recipe) => (
           <Card recipe={recipe} key={recipe.slug} />
