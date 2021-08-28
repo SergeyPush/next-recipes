@@ -63,31 +63,27 @@ const Navbar = () => {
           </Link>
         </div>
         <div className={styles.controls}>
-          {searchActive ? (
-            <Search setSearchActive={setSearchActive} />
-          ) : (
-            <>
-              <FontAwesomeIcon
-                icon={faSearch}
-                className={cn(styles.icon, styles.search)}
-                onClick={() => setSearchActive(true)}
-                size={"2x"}
-              />
-              <FontAwesomeIcon icon={faUser} className={styles.icon} />
-              <HamburgerMenu
-                menuClicked={() => {
-                  setMenuIsOpen((prevState) => !prevState);
-                }}
-                isOpen={menuIsOpen}
-                width={36}
-                height={24}
-                strokeWidth={3}
-                color="white"
-                className={styles.burger}
-                animationDuration={0.2}
-              />
-            </>
-          )}
+          {searchActive && <Search setSearchActive={setSearchActive} />}
+          <>
+            <FontAwesomeIcon
+              icon={faSearch}
+              className={cn(styles.icon, styles.search)}
+              onClick={() => setSearchActive(true)}
+            />
+            <FontAwesomeIcon icon={faUser} className={styles.icon} />
+            <HamburgerMenu
+              menuClicked={() => {
+                setMenuIsOpen((prevState) => !prevState);
+              }}
+              isOpen={menuIsOpen}
+              width={36}
+              height={24}
+              strokeWidth={3}
+              color="white"
+              className={styles.burger}
+              animationDuration={0.2}
+            />
+          </>
         </div>
       </nav>
     </div>

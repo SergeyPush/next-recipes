@@ -46,3 +46,13 @@
 .rating {
   color: $accent_color2
 }
+
+@media (max-width: 640px) {
+
+  .name {
+    font-size: 1rem;
+  }
+  .footer {
+
+  }
+}

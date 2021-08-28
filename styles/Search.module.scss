@@ -2,11 +2,12 @@
 
 
 .container {
-  position: relative;
+  position: absolute;
   width: 250px;
   display: flex;
   align-items: center;
-
+  left: -265px;
+  top: -5px;
 }
 
 .input {
