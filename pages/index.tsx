@@ -19,7 +19,7 @@ const Home: React.FC<HomeProps> = ({ data }) => {
         <div className={styles.wrapper}>
           <Showcase recipe={data[0]} className={styles.first} />
           <div className={styles.grid}>
-            {data.slice(0, 4).map((recipe) => (
+            {data.slice(1, 5).map((recipe) => (
               <Card recipe={recipe} key={recipe.slug} />
             ))}
           </div>

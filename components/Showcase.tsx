@@ -25,7 +25,7 @@ const Showcase: React.FC<ShowcaseProps> = ({ recipe }) => {
         <p className={styles.title}>{recipe.name}</p>
         <p className={styles.description}>{recipe.subtitle}</p>
         <Link href={`/recipes/${recipe.slug}`}>
-          <a className={styles.link}>Get the recipe</a>
+          <a className={styles.link}>Get the recipe &gt;</a>
         </Link>
       </div>
     </div>
