@@ -10,6 +10,9 @@ import TagComponent from "../../components/TagComponent";
 import Favorites from "../../components/Favorites";
 import { useFavorites } from "../../hooks/useFavorites";
 import Header from "../../components/Header";
+import { BLOCKS } from "@contentful/rich-text-types";
+import { faClock } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface RecipePageTypes {
   recipe: IRecipe;
@@ -32,6 +35,14 @@ const RecipePage: React.FC<RecipePageTypes> = ({ recipe }) => {
   } = recipe;
 
   const { isFavorite, addToFavorites } = useFavorites(recipe);
+  const options = {
+    renderNode: {
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        const { url } = node.data.target.fields.file;
+        return <ImageComponent src={url} alt={"Inline Image"} />;
+      },
+    },
+  };
 
   return (
     <MainLayout title={name}>
@@ -47,8 +58,10 @@ const RecipePage: React.FC<RecipePageTypes> = ({ recipe }) => {
           />
         </div>
         <ImageComponent src={image.fields.file.url} alt={name} />
-        Cooking time: {time}min
-        <RichText text={description} />
+        <p className={styles.cooking}>
+          <FontAwesomeIcon icon={faClock} /> {time} min cooking time
+        </p>
+        <RichText text={description} options={options} />
         <h3>Ingredients:</h3>
         <RichText text={ingredients} />
       </div>

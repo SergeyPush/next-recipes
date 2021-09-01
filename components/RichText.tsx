@@ -5,12 +5,13 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 interface RichTextProps {
   text: Document;
+  options?: object;
 }
 
-const RichText: React.FC<RichTextProps> = ({ text, ...props }) => {
+const RichText: React.FC<RichTextProps> = ({ text, options, ...props }) => {
   return (
     <div {...props} className={styles.text}>
-      {documentToReactComponents(text)}
+      {documentToReactComponents(text, options)}
     </div>
   );
 };
