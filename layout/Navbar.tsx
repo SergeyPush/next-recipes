@@ -10,11 +10,14 @@ import { useState } from "react";
 import Search from "../components/Search";
 import HamburgerMenu from "react-hamburger-menu";
 import MobileMenu from "./MobileMenu";
+import LocaleSwitcher from "../components/LocaleSwitcher";
+import { useLocale } from "../hooks/useLocale";
 
 const Navbar = () => {
   const router = useRouter();
   const [searchActive, setSearchActive] = useState<boolean>(false);
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
+  const { t } = useLocale();
 
   return (
     <div>
@@ -40,7 +43,7 @@ const Navbar = () => {
                 [styles.active]: router.pathname === "/",
               })}
             >
-              Home
+              {t.header.home}
             </a>
           </Link>
           <Link href={"/recipes"}>
@@ -49,7 +52,7 @@ const Navbar = () => {
                 [styles.active]: router.pathname === "/recipes",
               })}
             >
-              Recipes
+              {t.header.recipes}
             </a>
           </Link>
           <Link href={"/favorites"}>
@@ -58,13 +61,14 @@ const Navbar = () => {
                 [styles.active]: router.pathname === "/favorites",
               })}
             >
-              Favorites
+              {t.header.favorites}
             </a>
           </Link>
         </div>
         <div className={styles.controls}>
           {searchActive && <Search setSearchActive={setSearchActive} />}
           <>
+            <LocaleSwitcher />
             <FontAwesomeIcon
               icon={faSearch}
               className={cn(styles.icon, styles.search)}

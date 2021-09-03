@@ -5,7 +5,6 @@ import React from "react";
 import Card from "../components/Card";
 import styles from "../styles/Home.module.scss";
 import Showcase from "../components/Showcase";
-import Header from "../components/Header";
 import Slider from "../components/Slider";
 
 interface HomeProps {
@@ -30,8 +29,10 @@ const Home: React.FC<HomeProps> = ({ data }) => {
   );
 };
 
-export const getStaticProps = async () => {
-  const { items } = await client.getEntries();
+export const getStaticProps = async ({ locale }) => {
+  const { items } = await client.getEntries({
+    locale,
+  });
   const data = items.map((item) => item.fields);
 
   return { props: { data } };

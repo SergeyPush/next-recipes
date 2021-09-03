@@ -71,15 +71,16 @@ const RecipePage: React.FC<RecipePageTypes> = ({ recipe }) => {
 
 export default RecipePage;
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params, locale }) => {
   const res = await client.getEntries({
     content_type: "recipie",
     "fields.slug": params.slug,
+    locale,
   });
 
   return { props: { recipe: res.items[0].fields } };
 };
-export const getStaticPaths = async () => {
+export const getStaticPaths = async ({ locales }) => {
   const res: any = await client.getEntries({
     content_type: "recipie",
   });
@@ -90,8 +91,13 @@ export const getStaticPaths = async () => {
     };
   });
 
+  let pathsWithLocales;
+  for (let locale of locales) {
+    pathsWithLocales = paths.map((item) => ({ ...item, locale }));
+  }
+ 
   return {
-    paths,
+    paths: pathsWithLocales,
     fallback: true,
   };
 };

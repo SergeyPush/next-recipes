@@ -47,12 +47,14 @@
 .controls {
   position: relative;
   display: flex;
+  align-items: center;
 
 }
 
 .search {
-  margin-left: auto;
+  margin-left: 15px;
   cursor: pointer;
+
 }
 
 .burger {

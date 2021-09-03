@@ -3,6 +3,7 @@ import { IRecipe } from "../interfaces/IRecipe";
 import styles from "../styles/Showcase.module.scss";
 import Image from "next/image";
 import Link from "next/link";
+import { useLocale } from "../hooks/useLocale";
 
 interface ShowcaseProps
   extends DetailedHTMLProps<
@@ -13,6 +14,7 @@ interface ShowcaseProps
 }
 
 const Showcase: React.FC<ShowcaseProps> = ({ recipe }) => {
+  const { t } = useLocale();
   return (
     <div className={styles.imageWrapper}>
       <Image
@@ -25,7 +27,7 @@ const Showcase: React.FC<ShowcaseProps> = ({ recipe }) => {
         <p className={styles.title}>{recipe.name}</p>
         <p className={styles.description}>{recipe.subtitle}</p>
         <Link href={`/recipes/${recipe.slug}`}>
-          <a className={styles.link}>Get the recipe &gt;</a>
+          <a className={styles.link}>{t.showcase.get_the_recipe} &gt;</a>
         </Link>
       </div>
     </div>
