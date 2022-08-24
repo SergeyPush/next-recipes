@@ -1,11 +1,11 @@
-import React from "react";
-import Image from "next/image";
-import { IRecipe } from "../interfaces/IRecipe";
-import styles from "../styles/Card.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock } from "@fortawesome/free-regular-svg-icons";
-import Rating from "./Rating";
-import Link from "next/link";
+import React from 'react';
+import Image from 'next/image';
+import { IRecipe } from '../interfaces/IRecipe';
+import styles from '../styles/Card.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClock } from '@fortawesome/free-regular-svg-icons';
+import Rating from './Rating';
+import Link from 'next/link';
 
 interface CardProps {
   recipe: IRecipe;
@@ -17,10 +17,10 @@ const Card: React.FC<CardProps> = ({ recipe }) => {
       <div className={styles.card}>
         <div className={styles.imageWrapper}>
           <Image
-            src={"https:" + recipe.image.fields.file.url}
+            src={'https:' + recipe.image.fields.file.url}
             className={styles.image}
-            layout={"fill"}
-            objectFit={"cover"}
+            layout={'fill'}
+            objectFit={'cover'}
           />
         </div>
         <div className={styles.contentWrapper}>
