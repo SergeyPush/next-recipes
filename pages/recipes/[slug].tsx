@@ -1,18 +1,18 @@
-import React from "react";
-import { client } from "../../utils/contentful_api";
-import { IRecipe } from "../../interfaces/IRecipe";
-import MainLayout from "../../layout/MainLayout";
-import Rating from "../../components/Rating";
-import ImageComponent from "../../components/ImageComponent";
-import styles from "../../styles/RecipePage.module.scss";
-import RichText from "../../components/RichText";
-import TagComponent from "../../components/TagComponent";
-import Favorites from "../../components/Favorites";
-import { useFavorites } from "../../hooks/useFavorites";
-import Header from "../../components/Header";
-import { BLOCKS } from "@contentful/rich-text-types";
-import { faClock } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
+import { client } from '../../utils/contentful_api';
+import { IRecipe } from '../../interfaces/IRecipe';
+import MainLayout from '../../layout/MainLayout';
+import Rating from '../../components/Rating';
+import ImageComponent from '../../components/ImageComponent';
+import styles from '../../styles/RecipePage.module.scss';
+import RichText from '../../components/RichText';
+import TagComponent from '../../components/TagComponent';
+import Favorites from '../../components/Favorites';
+import { useFavorites } from '../../hooks/useFavorites';
+import Header from '../../components/Header';
+import { BLOCKS } from '@contentful/rich-text-types';
+import { faClock } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface RecipePageTypes {
   recipe: IRecipe;
@@ -20,7 +20,7 @@ interface RecipePageTypes {
 
 const RecipePage: React.FC<RecipePageTypes> = ({ recipe }) => {
   if (!recipe) {
-    return <MainLayout title={"Not found"}>Page not found</MainLayout>;
+    return <MainLayout title={'Not found'}>Page not found</MainLayout>;
   }
   const {
     name,
@@ -39,7 +39,7 @@ const RecipePage: React.FC<RecipePageTypes> = ({ recipe }) => {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const { url } = node.data.target.fields.file;
-        return <ImageComponent src={url} alt={"Inline Image"} />;
+        return <ImageComponent src={url} alt={'Inline Image'} />;
       },
     },
   };
@@ -73,8 +73,8 @@ export default RecipePage;
 
 export const getStaticProps = async ({ params, locale }) => {
   const res = await client.getEntries({
-    content_type: "recipie",
-    "fields.slug": params.slug,
+    content_type: 'recipie',
+    'fields.slug': params.slug,
     locale,
   });
 
@@ -82,7 +82,7 @@ export const getStaticProps = async ({ params, locale }) => {
 };
 export const getStaticPaths = async ({ locales }) => {
   const res: any = await client.getEntries({
-    content_type: "recipie",
+    content_type: 'recipie',
   });
 
   const paths = res.items.map((item) => {
@@ -95,7 +95,7 @@ export const getStaticPaths = async ({ locales }) => {
   for (let locale of locales) {
     pathsWithLocales = paths.map((item) => ({ ...item, locale }));
   }
- 
+
   return {
     paths: pathsWithLocales,
     fallback: true,

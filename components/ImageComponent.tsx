@@ -17,7 +17,7 @@ const ImageComponent: React.FC<ImageComponentProps> = ({
   alt,
 }) => {
   return (
-    <div className={styles.imageContainer}>
+    <div className={styles.imageWrapper}>
       <Image
         src={`https:${src}`}
         layout="fill"
